@@ -1,7 +1,5 @@
 # Homeworks
 
-All homeworks are due by Friday 11.59 PM CET. Upload all the homeworks to the https://e.pcloud.com/#page=puplink&code=U1Zoyd8ePgsJm8nmpakPSlgI5aCWx9X
-
 ## Day 1
 
 ### Packages
@@ -12,7 +10,7 @@ Choose a letter of the alphabet randomly and find somewhat relevant package at h
 1. Check the package description
 2. Try to understand what the package is about - spend about 15-30 minutes with trying to comprehend what the package tries to solve
 3. Install the package - try out some of it’s functionality as it is outlined in the documentation
-4. Prepare brief report to report about tomorrow
+4. Prepare a brief report for us
 5. Paste parts of functioning code which you tried - things from examples, vignettes etc.
 6. Write a short report which you will submit
     a. what the package is about?
@@ -68,6 +66,8 @@ Each of these should be written in code on a single line.
 6. What is the sum of years for the “rooster”?
 7. What is the median year for the “dragon”
 8. What is the 3rd_year of a goat?
+
+## Day 2
 
 ### Creating custom dataset
 Name the file [your-name]-custom-dataset.R.
