@@ -12,7 +12,7 @@ vec_num <- c(vec_num, vec_num)
 vec_num
 ?c
 
-## try combinding this
+## try combining this
 c(5, TRUE, 1, 10)
 
 c(5, "hello", TRUE)
@@ -116,12 +116,136 @@ iris[i_large_sepal_length, ]
 
 iris[iris$Sepal.Length > 5, ]
 
-
 # iris
 species <- iris$Species
 # 1. SELECT all virginica
-virginica <- .....
+virginica <- iris$Species[iris$Species == "virginica"]
+virginica <- species[species == "virginica"]
 # 2. select everything else, then virginica
-not_virginica <- 
+not_virginica <- iris$Species[iris$Species != "virginica"]
+not_virginica
 # 3. Select all sepal.length > mean(sepal length)
-sepal_above_average <- .....
+mean(iris$Sepal.Length)
+sepal_above_average <- iris$Sepal.Length[iris$Sepal.Length > mean(iris$Sepal.Length)]
+
+avg_sepal_length <- mean(iris$Sepal.Length)
+sepal_above_average <- iris$Sepal.Length[iris$Sepal.Length > avg_sepal_length]
+
+# %in%
+favorite_cities <- c("Prague", "Montreal")
+cities %in% favorite_cities
+
+large_species <- iris$Species[iris$Sepal.Length > 6.8]
+large_species
+iris$Species %in% large_species
+
+### negative indexing -----
+letters[-1]
+
+iris$Species[iris$Species %in% large_species]
+iris$Species[!(iris$Species %in% large_species)]
+
+cities[cities != "Prague"]
+
+!TRUE
+!c(TRUE, FALSE)
+
+### shorthand 1:5 -----
+seq(1,100,1)
+
+1:100
+5:7
+
+iris$Species[1:50]
+
+# Vector functions -----
+
+length(cities)
+#last element
+cities[length(cities)]
+#last three elements
+i_last <- length(cities)
+i_start <- length(cities)-2
+cities[i_start:i_last]
+
+tail(cities, 3)
+head(cities, 2)
+
+rev(roulette_colors)
+
+### Unique
+unique(roulette_colors)
+unique(large_species)
+
+### Table
+table(large_species)
+table(ggplot2::mpg$manufacturer)
+
+summary(ggplot2::mpg$manufacturer)
+summary(iris$Sepal.Length)
+
+## Numeric functions
+iris$Sepal.Length
+
+mean()
+quantile()
+median()
+sum()
+round()
+min()
+range()
+sd()
+
+# get a sum of all sepal lengths for top 10 percent
+q_top10 <- quantile(iris$Sepal.Length, 0.9)
+top10_sum <- sum(iris$Sepal.Length[iris$Sepal.Length >= q_top10])
+# get a sum of all sepal length for bottom 10 percent
+# q_bottom10 <- 
+# bottom10_sum <-
+
+hist(iris$Sepal.Length, breaks = 20)
+
+## Character functions
+toupper("Lukas")
+toupper(cities)
+toupper(iris$Species)
+
+nchar("Lukas")
+nchar(cities)
+
+continents <- c("north america", "south america", "europe", "middle america")
+grepl("america", continents)
+
+continents <- c("north America", "south america", "europe", "MIDDLE AMERICA", "america west")
+grepl("america", tolower(continents))
+
+## REGULAR EXPRESSIONS
+
+paste("america", "west")
+paste(cities)
+paste(cities, collapse = "")
+
+## Vector math ----
+1:5 + 1 
+
+1:5 + 1:5
+1:6 + 1:2
+
+cities[c(TRUE, FALSE)]
+
+vec_num <- 1:10
+# 1 2 3 4 5 6 7 8 9 10
+vec_num[c(TRUE, FALSE)]
+# T F T F T F T F T F
+
+
+vec_num <- 1:11
+#1 2 3 4 5 6 7 8 9 10
+vec_num[c(TRUE, FALSE)]
+#T F T F T F T F T F T
+
+## 
+na_vec <- c(1,3,5,NA,6)
+which(is.na(na_vec))
+na_vec[!is.na(na_vec)]
+
