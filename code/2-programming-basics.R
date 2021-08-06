@@ -157,8 +157,8 @@ hist(normal_values)
 6 == 6
 
 # how to do less or equal
-6 .... 6 #TRUE
-5 .... 6 #TRUE
+6 <= 6 #TRUE
+5 >= 6 #TRUE
 
 # how to do greater or equal
 
@@ -181,4 +181,20 @@ is_smoking | (my_age > 30)
 
 
 1stdayeachweek <- "Monday"
+
+## Unfinihsed expressions
+5 * # my_age
+
+5 * 
+  my_age <- 32
+
+head(ggplot2::mpg)
+
+my_histogram <- #31
+hist(ggplot2::mpg$cty)
+
+
+
+
+
 
