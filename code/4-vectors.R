@@ -40,6 +40,7 @@ rep(c("female", "male"),50)
 
 # Create vector of 5 cities called cities with 5 EU capitals. It must include Prague
 cities <- c("Bratislava", "Stockholm", "Paris", "Prague", "Berlin")
+countries <- c("Slovakia", "Sweeden", "France", "Czechia", "Germany")
 # Create vector temperatures of human temperature from 36.3 to 40.5 with 0.1 steps
 temperatures <- seq(36.3, 40.5, 0.1)
 # create vector roulette_numbers with numbers from 0 to 36
@@ -48,6 +49,8 @@ roulette_numbers <- seq(0, 36)
 roulette_colors <- c("green", rep(c("red", "black"), 18))
 
 length(roulette_colors)
+
+## Selecting by index ----
 
 roulette_colors[1]
 roulette_colors[2]
@@ -61,11 +64,64 @@ roulette_colors[value_of_interest]
 ## out of scope
 roulette_colors[50]
 
-# create vector called weekdays with each day of the week
-# weekdays <- 
-# create vector called weekdays_10 which is days in 10 weeks consecutively
-# weekdays_10 <-
-# Crete vector of odd numbers call odd_numbers with numbers from 1 to 99
-# odd_numbers <- 
-# Create vector of length 100 called true_false (T, F, T, F, T, F, T, F …)
-# true_false <- 
+# spin the roulette 5 times
+set.seed(100)
+results <- sample(roulette_numbers, 35, replace = TRUE)
+results
+table(results)
+table(sample(roulette_numbers, 35))
+table(sample(roulette_numbers, 50))
+
+set.seed(100)
+results <- sample(roulette_numbers, 5, replace = TRUE)
+roulette_colors[results + 1]
+
+results + 1
+results * 10
+
+roulette_colors[c(1, 5)]
+
+## Select by logical -----
+numbers <- c(1,5,10)
+selection_vector <- c(FALSE, FALSE, TRUE)
+
+numbers[selection_vector]
+
+numbers > 8
+
+black_colors <- roulette_colors == "black"
+roulette_colors[black_colors]
+roulette_numbers[black_colors]
+
+temperatures_below39 <- temperatures[temperatures < 39]
+temperatures_below39
+
+cities != "Prague"
+cities_without_prague <- cities[cities != "Prague"]
+cities_without_prague
+
+cities == "Paris"
+countries[cities == "Paris"]
+
+## which -------
+cities == "Paris"
+which(cities == "Paris")
+
+i_not_paris <- which(cities != "Paris")
+countries[i_not_paris]
+
+head(iris)
+i_large_sepal_length <- which(iris$Sepal.Length > 5)
+iris[i_large_sepal_length, ]
+
+iris[iris$Sepal.Length > 5, ]
+
+
+# iris
+species <- iris$Species
+# 1. SELECT all virginica
+virginica <- .....
+# 2. select everything else, then virginica
+not_virginica <- 
+# 3. Select all sepal.length > mean(sepal length)
+sepal_above_average <- .....
