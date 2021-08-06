@@ -160,7 +160,7 @@ hist(normal_values)
 6 .... 6 #TRUE
 5 .... 6 #TRUE
 
-# how to do greather or equal
+# how to do greater or equal
 
 5 != 6
 6 != 6
