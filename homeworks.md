@@ -83,3 +83,43 @@ Put all the code inside the R file. You don't need to actually answer the questi
 7. Select rows which contain only mondays.
 8. What is the average happiness on Mondays?
 9. What is the average happiness in the 40th week?
+
+### Analysing iris dataset
+
+Name the file [your-name]-iris-exploration.R. 
+
+Put all the code inside the R file. You don't need to actually answer all the questions (except question 3), just submit code which will correctly calculate them.
+
+1. Read about the iris dataset (`?iris`)
+2. Investigate the dataset using head, str, tail etc.
+3. What types of variables the columns are?
+4. Does the dataset have rownames? If yes, what are those?
+5. What si the median, mean and variance of Sepal.Width?
+6. Get the mean Sepal.Length of virginica?
+7. What is the min and max of Petal.Length of Setosa?
+8. What are the counts of various Species which have Sepal.length above 5?
+
+### Plotting multiple plots and setting features
+
+Name the file [your-name]-multiple-plots.R
+
+All plots should be legible
+1. Load the world-happiness.csv dataset. Select only year 2019 data.
+2. plot four images in a 2x2 grid. 
+3. Images 1 and 3 should be histograms of Score and GDP respectively.
+4. Image two should be a scatter plot of GDP ~ Score. Set point type to be a square and it's color is white.
+5. Add linear regression abline with width of 3. 
+6. Image 4 contains boxplots of GDP and Score values - set the color of the outline and other graph setting
+![](img/multiple-1.png)
+
+### Inferential plots
+
+Name the file [your-name]-inferential-plots.R
+
+1. Load data ggplot2::mpg
+2. Plot histograms of compact cars and pickups highway speeds next to each other. Define breaks to be same in both cases. Bonus points - label and color them appropriately add density lines to both
+![](img/inf-1.png)
+3. Calculate mean city speed for midsize and suv cars and plot them side by side using barplot. Label and color them appropriately
+![](img/inf-2.png)
+4. Create pairs scatterplots of city speed, highway speed and displacement and color points using the class. Plot only compact, 2seater and minivans. For bonus points (which might require you to do a bit of googling), add legend to the plot determining colors of each of car classes.
+![](img/inf-3.png)
