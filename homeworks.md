@@ -10,7 +10,7 @@ Choose a letter of the alphabet randomly and find somewhat relevant package at h
 1. Check the package description
 2. Try to understand what the package is about - spend about 15-30 minutes with trying to comprehend what the package tries to solve
 3. Install the package - try out some of it’s functionality as it is outlined in the documentation
-4. Prepare a brief report for us
+4. *(Prepare a brief report for us)*
 5. Paste parts of functioning code which you tried - things from examples, vignettes etc.
 6. Write a short report which you will submit
     a. what the package is about?
