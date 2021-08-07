@@ -151,19 +151,75 @@ USArrests[order(USArrests$Assault),]
 USArrests[order(USArrests$Assault, decreasing = TRUE),]
 
 # Output first 6 countries with the most population
+tail(USArrests[order(USArrests$UrbanPop),], 6)
+head(USArrests[order(USArrests$UrbanPop, decreasing = TRUE),], 6)
 
 # Output the safest 5 countries in relation to assault rates
+head(USArrests[order(USArrests$Assault),], 5)
 
 # Complex subsetting -------------------
 
-# Select country which is either in bottom 10 percent in murders or assault
+#|
+#&
+
+head(USArrests[order(USArrests$Murder | USArrests$Assault), ], 10)
+
+order(USArrests$Murder | USArrests$Assault)
+USArrests$Murder | USArrests$Assault
+
+
+# Select country which is either in bottom 10 in murders or assault
+worst_in_murder <- rownames(USArrests)[order(USArrests$Murder, decreasing = TRUE)][1:10]
+worst_in_assault <- rownames(USArrests)[order(USArrests$Assault, decreasing = TRUE)][1:10]
+
+(rownames(USArrests) %in% worst_in_murder)
+(rownames(USArrests) %in% worst_in_assault)
+(rownames(USArrests) %in% worst_in_murder) | (rownames(USArrests) %in% worst_in_assault)
+
+sum((rownames(USArrests) %in% worst_in_murder))
+sum((rownames(USArrests) %in% worst_in_murder) | (rownames(USArrests) %in% worst_in_assault))
+
+View(data.frame(country = rownames(USArrests),
+  is_worst_murder = (rownames(USArrests) %in% worst_in_murder),
+           is_worst_assault = (rownames(USArrests) %in% worst_in_assault),
+           is_worst_either = (rownames(USArrests) %in% worst_in_murder) |
+           (rownames(USArrests) %in% worst_in_assault)))
+
+
+worst_in_murder <- rownames(USArrests)[order(USArrests$Murder, decreasing = TRUE)][1:10]
+worst_in_assault <- rownames(USArrests)[order(USArrests$Assault, decreasing = TRUE)][1:10]
+rownames(USArrests)[(rownames(USArrests) %in% worst_in_murder) |
+                      (rownames(USArrests) %in% worst_in_assault)]
+
+sort(worst_in_murder)
+
+worst_in_murder <- rownames(USArrests)[order(USArrests$Murder, decreasing = TRUE)][1:10]
+worst_in_assault <- rownames(USArrests)[order(USArrests$Assault, decreasing = TRUE)][1:10]
+
+worst_in_either <- c(worst_in_assault, worst_in_murder)
+USArrests[unique(worst_in_either),]
 
 # Selecting countries which are in both bottom 10
+worst_in_murder <- rownames(USArrests)[order(USArrests$Murder, decreasing = TRUE)][1:10]
+worst_in_assault <- rownames(USArrests)[order(USArrests$Assault, decreasing = TRUE)][1:10]
+
+rownames(USArrests)[(rownames(USArrests) %in% worst_in_murder) & #AND
+                      (rownames(USArrests) %in% worst_in_assault)]
+
+union(worst_in_assault, worst_in_murder)
+intersect(worst_in_assault, worst_in_murder)
+USArrests[intersect(worst_in_assault, worst_in_murder),]
 
 #' Select countries which are in the top 10 in Murder and Assault and 
 #' Urban population is below average
 
 
 # Creating custom data frames --------
+me <- list(name = "Lukas",
+           children = c("Monica", "Eli", "Elizabeth", "Martin"))
+data.frame(name = "Lukas",
+           children = "Monica")
 
 
+df_roulette <- data.frame(number = 0:36,
+                          color = c("green", rep(c("black", "red"), 18)))
