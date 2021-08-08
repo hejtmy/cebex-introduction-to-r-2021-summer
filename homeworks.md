@@ -117,9 +117,9 @@ All plots should be legible
 Name the file [your-name]-inferential-plots.R
 
 1. Load data ggplot2::mpg
-2. Plot histograms of compact cars and pickups highway speeds next to each other. Define breaks to be same in both cases. Bonus points - label and color them appropriately add density lines to both
+2. Plot histograms of compact cars' and pickups' highway miles per gallon next to each other. Define breaks to be same in both cases. Bonus points - label and color them appropriately add density lines to both
 ![](img/inf-1.png)
-3. Calculate mean city speed for midsize and suv cars and plot them side by side using barplot. Label and color them appropriately
+3. Calculate mean city miles per gallon for midsize and suv cars and plot them side by side using barplot. Label and color them appropriately
 ![](img/inf-2.png)
-4. Create pairs scatterplots of city speed, highway speed and displacement and color points using the class. Plot only compact, 2seater and minivans. For bonus points (which might require you to do a bit of googling), add legend to the plot determining colors of each of car classes.
+4. Create pairs scatterplots of city miles per gallon, highway miles per gallon and displacement and color points using the class. Plot only compact, 2seater and minivans. For bonus points (which might require you to do a bit of googling), add legend to the plot determining colors of each of car classes.
 ![](img/inf-3.png)
